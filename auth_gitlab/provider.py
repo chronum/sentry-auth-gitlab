@@ -12,6 +12,8 @@ from .views import FetchUser
 
 class GitLabOAuth2Provider(OAuth2Provider):
     name = 'Gitlab'
+    client_id = CLIENT_ID
+    client_secret = CLIENT_SECRET
 
     def get_auth_pipeline(self):
         return [
@@ -38,3 +40,4 @@ class GitLabOAuth2Provider(OAuth2Provider):
             'name': user_data['name'],
             'data': self.get_oauth_data(data),
         }
+    
